@@ -1,0 +1,101 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/*---Library Container---*/
+#myLibrary {
+    border: dotted purple 4px;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse; */
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/*---Book Cards---*/
+.book-cards {
+    border: solid blue 7px;
+    width: 200px;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.book-cards:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+}
+
+/* Add some padding inside the card container */
+.book-info {
+    padding: 2px 16px;
+}
+
+
+.mystyle {
+    color: red
+}
+
+
+/*---Add Book Form---*/
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #1b198a;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: relative;
+  left: calc(50% - 140px);
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 15%;
+  right: 65%;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  /* max-width: 300px; */
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+#btnsubmit {
+  background-color: red;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add some hover effects to buttons */
+.form-container #btnsubmit:hover, .open-button:hover {
+  opacity: 1;
+}

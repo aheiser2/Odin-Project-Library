@@ -8,44 +8,30 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h2>Hello Wolrd!</h2>
-    <div id="myLibrary">Hello</div>
-    <form>
-        <label for="title">Book Title:</label>
-        <input type="text" id="title" name="title"><br><br>
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author"><br><br>
-        <label for="pages">Pages:</label>
-        <input type="number" id="pages" name="pages"><br><br>
-        <label for="readStatus">Read?:</label>
-        <select id="readStatus" name="readStatus">
-            <option value="read">Read</option>
-            <option value="notRead">Not read</option><br><br>
-        <input id="btnsubmit" type="button" value="Submit" onclick="addBookToLibrary()">
-      </form> 
+    <h1>Welcome to My Library!</h1>
+    <button class="open-button" onclick="openForm()">NEW BOOK</button>
+    <div id="myLibrary"></div>
+
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <label for="title">Book Title:</label>
+            <input type="text" id="title" name="title"><br><br>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author"><br><br>
+            <label for="pages">Pages:</label>
+            <input type="number" id="pages" name="pages"><br><br>
+            <label for="readStatus">Read?:</label>
+            <select id="readStatus" name="readStatus"><br><br>
+                <option value="read">Read</option>
+                <option value="notRead">Not read</option>
+            <input id="btnsubmit" type="button" value="Submit" onclick="closeForm()">
+        </form>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
 
 <!--
-
-    Write a function that loops through the array and displays each book on 
-    the page. You can display them in some sort of table, or each on their 
-    own “card”. It might help for now to manually add a few books to your 
-    array so you can see the display.
-    Add a “NEW BOOK” button that brings up a form allowing users to input 
-    the details for the new book: author, title, number of pages, whether 
-    it’s been read and anything else you might want. You will most likely 
-    encounter an issue where submitting your form will not do what you expect 
-    t to do. That’s because the submit input tries to send the data to a 
-    server by default. If you’ve done the bonus section for the calculator 
-    assignment, you might be familiar with event.preventDefault();. Read 
-    p on the event.preventDefault documentation again and see how you can 
-    solve this issue!
-    Add a button on each book’s display to remove the book from the library.
-        You will need to associate your DOM elements with the actual book 
-        objects in some way. One easy solution is giving them a data-attribute 
-        that corresponds to the index of the library array.
     Add a button on each book’s display to change its read status.
         To facilitate this you will want to create the function that toggles a 
         book’s read status on your Book prototype instance.
