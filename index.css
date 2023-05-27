@@ -1,44 +1,147 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Castoro+Titling&family=Gabriela&family=Playball&display=swap');
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(Library-Arches.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative
+}
+
 * {box-sizing: border-box;}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    text-shadow: 0 0 3px #FF0000;
+}
 
 /*---Library Container---*/
 #myLibrary {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vw;
     border: dotted purple 4px;
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse; */
     display: grid;
-    gap: 1em;
+    gap: 60px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 /*---Book Cards---*/
+/*--Card Body--*/
 .book-cards {
-    border: solid blue 7px;
-    width: 200px;
+    background-color: aqua;
+    border-right: solid rgb(235, 235, 235) 15px;
+    border-bottom: solid rgb(235, 235, 235) 22px;
+    border-radius: 0px 20px 0px 20px;
+    width: 250px;
+    min-height: 360px;
+    height: auto;
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     transition: 0.3s;
+    text-align: center;
+    position: relative;
+    /* position: fixed; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* On mouse-over, add a deeper shadow */
-.book-cards:hover {
+h3 {
+    font-size: 1.8em;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+.book-cards:hover { /* On mouse-over, add a deeper shadow */
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
 }
 
-/* Add some padding inside the card container */
-.book-info {
+.book-info { /* Add some padding inside the card container */
+    text-align: center;
     padding: 2px 16px;
+    position: relative;
+}
+
+p {
+    font-size: 0.8em;
 }
 
 
+/*--Delete--*/
+.delete-button {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  width: 60px;
+  max-width: 100%;
+  padding: 0 40px;
+  position: absolute;
+  left: calc(50% - 45px);
+  bottom: 5%;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.delete-button:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.delete-button:hover:after {
+  transform: translate(0, 0);
+}
+
+.delete-button:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.delete-button:hover {
+  outline: 0;
+}
+
+
+/*--Other--*/
 .mystyle {
     color: red
 }
 
 
 /*---Add Book Form---*/
-/* Button used to open the contact form - fixed at the bottom of the page */
+/*--Open Button--*/
 .open-button {
   background-color: #1b198a;
   color: white;
@@ -51,25 +154,29 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 280px;
 }
 
-/* The popup form - hidden by default */
+/*--Popup Form--*/
 .form-popup {
   display: none;
   position: fixed;
-  bottom: 15%;
-  right: 65%;
-  border: 3px solid #f1f1f1;
+  width: 300px;
+  top: 20%;
+  left: calc(50% - 150px);
+  /* border: 3px solid black; */
   z-index: 9;
+  border-radius: 0px 20px 0px 20px;
 }
 
-/* Add styles to the form container */
 .form-container {
-  /* max-width: 300px; */
   padding: 10px;
-  background-color: white;
+  background-color: green;
+  color: white;
+    border-right: solid rgb(235, 235, 235) 15px;
+    border-bottom: solid rgb(235, 235, 235) 22px;
+    border-radius: 0px 18px 0px 18px;
 }
 
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
+
+.form-container input[type=text], .form-container input[type=password] { /* Full-width input fields */
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -77,14 +184,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background: #f1f1f1;
 }
 
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus { /* When the inputs get focus, do something */
   background-color: #ddd;
   outline: none;
 }
 
-/* Set a style for the submit/login button */
-#btnsubmit {
+
+#btnsubmit { /* Set a style for the submit/login button */
   background-color: red;
   color: white;
   padding: 16px 20px;
@@ -95,7 +202,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   opacity: 0.8;
 }
 
-/* Add some hover effects to buttons */
-.form-container #btnsubmit:hover, .open-button:hover {
+
+.form-container #btnsubmit:hover, .open-button:hover { /* Add some hover effects to buttons */
   opacity: 1;
 }
+
