@@ -8,34 +8,27 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Welcome to My Library!</h1>
+    <h1>Welcome to My Library! 12314</h1>
     <button class="open-button" onclick="openForm()">NEW BOOK</button>
     <div id="myLibrary"></div>
 
     <div class="form-popup" id="myForm">
         <form action="/action_page.php" class="form-container">
-            <label for="title">Book Title:</label>
+            <label for="title">BOOK TITLE:</label>
             <input type="text" id="title" name="title"><br><br>
-            <label for="author">Author:</label>
+            <label for="author">AUTHOR:</label>
             <input type="text" id="author" name="author"><br><br>
-            <label for="pages">Pages:</label>
+            <label for="pages">PAGES:</label>
             <input type="number" id="pages" name="pages"><br><br>
-            <label for="readStatus">Read?:</label>
+            <label for="readStatus">READ?:</label>
             <select id="readStatus" name="readStatus"><br><br>
                 <option value="read">Read</option>
                 <option value="notRead">Not read</option>
-            <input id="btnsubmit" type="button" value="Submit" onclick="closeForm()">
+            <input id="btnsubmit" type="button" value="SUBMIT" onclick="closeForm()">
         </form>
     </div>
+    <div id="pic-source">Image taken from the New York Times</div>
     <script src="index.js"></script>
 </body>
 </html>
 
-<!--
-    Add a button on each book’s display to change its read status.
-        To facilitate this you will want to create the function that toggles a 
-        book’s read status on your Book prototype instance.
-
-NOTE: You’re not required to add any type of storage right now. You will have 
-the option to come back to this project later on in the course.
--->

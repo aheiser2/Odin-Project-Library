@@ -1,32 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Castoro+Titling&family=Gabriela&family=Playball&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url(Library-Arches.jpg);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url(Library-Arches.jpg);  /*from the NYT*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    position: relative
+    position: relative;
 }
-
-* {box-sizing: border-box;}
 
 h1 {
     text-align: center;
     color: white;
-    font-size: 2em;
-    text-shadow: 0 0 3px #FF0000;
+    font-size: 2.4em;
+    text-shadow: 0 0 5px #a200ff;
+}
+
+#pic-source {
+    position: fixed;
+    z-index: -1;
+    bottom: 0px;
+    left: 0px;
+    color: white;
+    font-size: 0.8em;
+  padding: 0px 12px;
 }
 
 /*---Library Container---*/
 #myLibrary {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
     width: 75vw;
-    border: dotted purple 4px;
     display: grid;
     gap: 60px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -42,12 +50,10 @@ h1 {
     width: 250px;
     min-height: 360px;
     height: auto;
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4); /* Add shadows to create the "card" effect */
     transition: 0.3s;
     text-align: center;
     position: relative;
-    /* position: fixed; */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -55,16 +61,19 @@ h1 {
 
 h3 {
     font-size: 1.8em;
+    padding: 0px 10px;
     text-decoration: underline;
+    text-transform: capitalize;
     margin-bottom: 5px;
 }
 
 h4 {
     font-size: 1.2em;
+    text-transform: capitalize;
 }
 
 .book-cards:hover { /* On mouse-over, add a deeper shadow */
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+    box-shadow: 0 16px 24px 0 rgba(0,0,0,0.9);
 }
 
 .book-info { /* Add some padding inside the card container */
@@ -77,133 +86,149 @@ p {
     font-size: 0.8em;
 }
 
-
 /*--Delete--*/
 .delete-button {
-  align-items: center;
-  background-color: #fee6e3;
-  border: 2px solid #111;
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #111;
-  cursor: pointer;
-  display: flex;
-  font-size: 16px;
-  height: 48px;
-  justify-content: center;
-  line-height: 24px;
-  width: 60px;
-  max-width: 100%;
-  padding: 0 40px;
-  position: absolute;
-  left: calc(50% - 45px);
-  bottom: 5%;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    width: 60px;
+    max-width: 100%;
+    padding: 0 40px;
+    position: absolute;
+    left: calc(50% - 45px);
+    bottom: 5%;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .delete-button:after {
-  background-color: #111;
-  border-radius: 8px;
-  content: "";
-  display: block;
-  height: 48px;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
-  z-index: -1;
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
 }
 
 .delete-button:hover:after {
-  transform: translate(0, 0);
+    transform: translate(0, 0);
 }
 
 .delete-button:active {
-  background-color: #ffdeda;
-  outline: 0;
+    background-color: #ffdeda;
+    outline: 0;
 }
 
 .delete-button:hover {
-  outline: 0;
+    outline: 0;
 }
-
-
-/*--Other--*/
-.mystyle {
-    color: red
-}
-
 
 /*---Add Book Form---*/
 /*--Open Button--*/
 .open-button {
-  background-color: #1b198a;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: relative;
-  left: calc(50% - 140px);
-  width: 280px;
+    background-color: #1b198a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    align-items: center;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    width: 280px;
+    padding: 0 40px;
+    margin: 24px auto;
+    text-align: center;
+    touch-action: manipulation;  
 }
 
 /*--Popup Form--*/
 .form-popup {
-  display: none;
-  position: fixed;
-  width: 300px;
-  top: 20%;
-  left: calc(50% - 150px);
-  /* border: 3px solid black; */
-  z-index: 9;
-  border-radius: 0px 20px 0px 20px;
+    display: none;  
+    position: fixed;
+    width: 350px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    border-radius: 0px 20px 0px 20px;
 }
 
 .form-container {
-  padding: 10px;
-  background-color: green;
-  color: white;
+    padding: 30px 20px;
+    background-color: rgb(0, 113, 128);
+    color: white;
     border-right: solid rgb(235, 235, 235) 15px;
     border-bottom: solid rgb(235, 235, 235) 22px;
     border-radius: 0px 18px 0px 18px;
 }
 
-
-.form-container input[type=text], .form-container input[type=password] { /* Full-width input fields */
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
+label {
+    font-size: 0.9rem;
 }
 
-
-.form-container input[type=text]:focus, .form-container input[type=password]:focus { /* When the inputs get focus, do something */
-  background-color: #ddd;
-  outline: none;
+.form-container input[type=text], .form-container input[type=number], .form-container select { /* Full-width input fields */
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    border: none;
+    background: white;
 }
 
+.form-container input[type=text]:focus, .form-container input[type=number]:focus, .form-container select:focus { /* When the inputs get focus, do something */
+    background-color: rgb(184, 239, 247);
+    outline: none;
+}
 
 #btnsubmit { /* Set a style for the submit/login button */
-  background-color: red;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
+    background-color: rgb(1, 42, 48);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    opacity: 0.8;
+    align-items: center;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 40px;
+    text-align: center;
+    touch-action: manipulation;  
 }
 
-
 .form-container #btnsubmit:hover, .open-button:hover { /* Add some hover effects to buttons */
-  opacity: 1;
+    opacity: 1;
 }
 
